@@ -1,10 +1,24 @@
 "use client";
 import React from "react";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
-import serviceDetail from "@/data/music_courses.json";
+import serviceDetail from "@/data/our_services.json";
 import Link from "next/link";
 
+interface Service {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  price: number;
+  instructor: string;
+  isFeatured: boolean;
+}
+
 function Card() {
+
+  const featuredServices = serviceDetail.services.filter((service:Service) => service.isFeatured);
+
+
   return (
     <div className="py-12 bg-gray-900">
       <div>
@@ -17,7 +31,19 @@ function Card() {
           </p>
         </div>
       </div>
-      <div className=""></div>
+      <div className="mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          {featuredServices.map((service:Service) => (
+            <div key={service.id} className="flex justify-cenetr">
+              <BackgroundGradient className="flex flex-col rounded-[22px] bg-white dark:bg-zinc-900 overflow-hidden h-full max-w-sm">
+                <div className="p-4 sm:p-6 flex flex-col items-center text-center flex-grow">
+                  
+                </div>
+              </BackgroundGradient>
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="mt-20 text-center">
         <Link
           href={"/"}
