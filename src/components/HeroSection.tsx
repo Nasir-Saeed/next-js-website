@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { Spotlight } from "@/components/ui/Spotlight";
+import { Button } from "@/components/ui/moving-border";
+
 
 function HeroSection() {
   return (
@@ -12,7 +14,13 @@ function HeroSection() {
         <h1 className="mt-20 md:mt-0 text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 pb-10">Web design, development & SEO</h1>
         <p className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto">This is the thing I handle myself and started my career with this website design & development service. I create website based on content & your business niche. I develop custom web-functionalites depending on your unique need & based on my capabilities. As of September 2020, already built more than one hundred successfull websites.</p>
       <div className="mt-6">
-        <Link href={"https://nasir-saeed-portfolio.netlify.app/"} className="text-white border-2 p-3 rounded-lg">Explore My Portofolio</Link>
+        
+        <Button
+        borderRadius="1.75rem"
+        className="bg-dark dark:bg-slate-900 text-white dark:text-white border-neutral-200 dark:border-slate-800"
+      >
+        <Link href={"https://nasir-saeed-portfolio.netlify.app/"} >Explore My Portofolio</Link>
+      </Button>
       </div>
       </div>
     </div>
